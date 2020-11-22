@@ -50,15 +50,15 @@ select{
 	margin-top:4%;
 }
 
-select#credit{
-	float:right;
-
-
 label{
 	padding: 20px;
 	margin-left: -20px;
+
 }
 
 div.block{
-		width:100%;
+	width:100%;
 }
+
+select#credit{
+	float:right;
