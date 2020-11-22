@@ -16,14 +16,13 @@ def home():
 if __name__ == "__main__":
     app.run()
 
-
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['GET', 'POST'])
 def run():
-    a = [[9461, 50000, 637, 406597.5, 202500.0]]
-    for i in range(6):
-        a[i] = request.form["attribute" + str(i)]
-        if a[i] is None and i < 5:
-            a[i] = 0
-    arr = np.array(a)
-    pred = clf_model.predict(arr)
+    a = []
+    for i in range(5):
+        a.append(request.form["attribute" + str(i)])
+        #if a[i] is None and i < 5:
+        #    a[i] = 0
+    print(a)
+    pred = clf_model.predict([a])
     return render_template("index.html", data=pred)
