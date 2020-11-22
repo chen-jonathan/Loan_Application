@@ -10,7 +10,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <a href="#" class="navbar-brand" id="menuName">Check Your Loan</a>
+    <a href="#" class="navbar-brand" id="menuName">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" width="40" height="40" alt="">
+        <h2 style="display:inline; padding-left:15px">LoanSimple</h2>
+    </a>
         <button id = "navbarToggle" class= "navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -83,11 +86,14 @@
     </form>
     <div class = "float-child" id="finalMessage">
         {%if approved == "Approved!"%}
-        <h1 style="color:green">{{approved}}</h1>
+        <h1>Loan Prediction:</h1>
+        <h2 style="color:green">{{approved}}</h2>
         {%elif approved == "Not Approved."%}
-        <h1 style="color:red">{{approved}}</h1>
+        <h1>Loan Prediction:</h1>
+        <h2 style="color:red">{{approved}}</h2>
         {% endif %}
         {%if approved%}
+        <h1>Factors for Decision:</h1>
         <ol>
             {%for i in range(0, len)%}
             <li>{{reasons[i]}}</li>
