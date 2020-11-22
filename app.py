@@ -21,8 +21,12 @@ def run():
     a = []
     for i in range(5):
         a.append(request.form["attribute" + str(i)])
-        #if a[i] is None and i < 5:
-        #    a[i] = 0
+    gender = request.form(['gender'])
+    a.append(request.form(['spouse']))
+    a.append(request.form(['dependent']))
+    a.append(request.form(['education']))
+    a.append(request.form(['employed']))
+    a.append(request.form(['property']))
     print(a)
     pred = clf_model.predict([a])
     return render_template("index.html", data=pred)
