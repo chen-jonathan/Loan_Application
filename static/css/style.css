@@ -18,7 +18,7 @@ nav a:hover {
 .float-child {
     max-width: 50%;
 	width:50%;
-	height: 100%;
+	height: 140%;
     float: left;
     padding: 20px;
     border: 2px groove black;
@@ -41,7 +41,7 @@ input{
 	font-weight: bold;
 }
 p{
-	max-width:500px;
+	max-width:1000px;
 	padding-top: 40px;
 }
 
@@ -62,3 +62,4 @@ div.block{
 
 select#credit{
 	float:right;
+}
