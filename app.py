@@ -13,7 +13,7 @@ def home():
     reasons = []
     if pred == 'N':
         reasons = getFactors(a)
-    return render_template("index.html", approved=pred, reasons=reasons, len=len(reasons))
+    return render_template("index.html", approved=getApproved(pred), reasons=reasons, len=len(reasons))
 
 if __name__ == "__main__":
     app.run()
@@ -34,8 +34,11 @@ def run():
     pred = clf_model.predict([a])
     if pred == 'N':
         reasons = getFactors([a])
-    return render_template("index.html", approved=pred, reasons=reasons, len=len(reasons))
+    return render_template("index.html", approved=getApproved(pred), reasons=reasons, len=len(reasons))
 
+def getApproved(pred):
+    if (pred == 'Y'): return "Approved!"
+    return "Not Approved."
 
 def getFactors(a):
     a = a[0]
