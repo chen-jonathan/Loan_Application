@@ -74,25 +74,32 @@
         <label for="property"> Property Area:</label>
         <select name="property" id="property" required>
             <option value="fill_option">--Select an option--</option>
-            <option value="1">Rural</option>
-            <option value="2">SemiUrban</option>
-            <option value="3">Urban</option>
+            <option value="0">Rural</option>
+            <option value="1">SemiUrban</option>
+            <option value="2">Urban</option>
         </select>
       </div>
         <b><p><input type = "submit" value = "Submit" /></p></b>
     </form>
-    <div class = "float-child">
-        <p>Go to sleep</p>
+    <div class = "float-child" id="finalMessage">
+        {%if approved == "Approved!"%}
+        <h1 style="color:green">{{approved}}</h1>
+        {%else%}
+        <h1 style="color:red">{{approved}}</h1>
+        {% endif %}
+        <ol>
+            {%for i in range(0, len)%}
+            <li>{{reasons[i]}}</li>
+            {%endfor%}
+        </ol>
     </div>
 </div>
 
-<h1>{{approved}}</h1>
-
-<ol>
-{%for i in range(0, len)%}
-    <li>{{reasons[i]}}</li>
-{%endfor%}
-</ol>
+{%if approved == 'Approved!'%}
+<h1 style="color:green">{{approved}}</h1>
+{%else%}
+<h1 style="color:red">{{approved}}</h1>
+{%endif%}
 
 <style>
 
