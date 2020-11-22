@@ -43,4 +43,6 @@ def getFactors(a):
         factors.append("Your Credit History is insufficient. Try getting more credit experience before applying again.")
     if a[10] == 0: # Rural Customer
         factors.append("Rural Customers have a more difficult time getting a loan based on property appreciation. Try improving other factors before applying again.")
+    if a[7] > 180: # High Loan
+        factors.append("The borrowing amount you asked for is a little high. Please try a lower amount.")
     return factors
