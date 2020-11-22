@@ -68,18 +68,23 @@
         </select>
         <p><input type = "submit" value = "Submit" /></p>
     </form>
-    <div class = "float-child">
-        <p>Go to sleep</p>
+    <div class = "float-child" id="finalMessage">
+        {%if approved == "Approved!"%}
+        <h1 style="color:green">{{approved}}</h1>
+        {%else%}
+        <h1 style="color:red">{{approved}}</h1>
+        {% endif %}
+        <ol>
+            {%for i in range(0, len)%}
+            <li>{{reasons[i]}}</li>
+            {%endfor%}
+        </ol>
     </div>
 </div>
 
-<h1>{{approved}}</h1>
 
-<ol>
-{%for i in range(0, len)%}
-    <li>{{reasons[i]}}</li>
-{%endfor%}
-</ol>
+
+
 
 <style>
 
