@@ -26,7 +26,7 @@ def run():
     a = []
     for i in range(5):
         a.append(request.form["attribute" + str(i)])
-    gender = request.form(['gender'])
+    a.append(request.form(['gender']))
     a.append(request.form(['spouse']))
     a.append(request.form(['dependent']))
     a.append(request.form(['education']))
