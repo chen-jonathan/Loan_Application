@@ -1,0 +1,65 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Oxygen', sans-serif;
+}
+/*Selector for hovering over navbar*/
+nav a:hover {
+	opacity: 15%;
+}
+
+#menuName {
+	font-weight: bold;
+	font-size:1.5em;
+}
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+.float-child {
+    max-width: 50%;
+	width:50%;
+	height: 140%;
+    float: left;
+    padding: 20px;
+    border: 2px groove black;
+}
+h1{
+     font-weight:bold;
+     text-align:center;
+     margin-bottom:50px;
+ }
+li {
+    margin-bottom: 10px;
+}
+input{
+	max-width: 50%;
+	padding-left: 20px;
+	float: right;
+	text-align: center;
+	margin-top: -25;
+	padding: 10;
+	font-weight: bold;
+}
+p{
+	max-width:1000px;
+	padding-top: 40px;
+}
+
+select{
+	float:right;
+	margin-top:4%;
+}
+
+label{
+	padding: 20px;
+	margin-left: -20px;
+
+}
+
+div.block{
+	width:100%;
+}
+
+select#credit{
+	float:right;
+}
