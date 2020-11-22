@@ -8,7 +8,7 @@ clf_model = pickle.load(open('beta_model_1.pkl', 'rb'))
 
 @app.route("/")
 def home():
-    a = [[9461, 50000, 637, 406597.5, 202500.0]]
+    a = [[9461, 10000, 637, 406597.5, 202500.0]]
     pred = clf_model.predict(a)
     return render_template("index.html", data=pred)
 

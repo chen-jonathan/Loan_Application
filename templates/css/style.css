@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Oxygen', sans-serif;
+}
+/*Selector for hovering over navbar*/
+nav a:hover {
+	opacity: 15%;
+}
+
+#menuName {
+	font-weight: bold;
+	font-size:1.5em;
+}
+
+
