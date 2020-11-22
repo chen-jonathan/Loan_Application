@@ -3,13 +3,14 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-clf_model = pickle.load(open('beta_model_1.pkl', 'rb'))
+clf_model = pickle.load(open('beta_model_3.pkl', 'rb'))
 
 
 @app.route("/")
 def home():
-    a = [[9461, 10000, 637, 406597.5, 202500.0]]
-    pred = clf_model.predict(a)
+    #a = [[9461, 10000, 637, 406597.5, 202500.0]]
+    #pred = clf_model.predict(a)
+    pred = []
     return render_template("index.html", data=pred)
 
 
@@ -21,7 +22,7 @@ def run():
     a = []
     for i in range(5):
         a.append(request.form["attribute" + str(i)])
-    gender = request.form(['gender'])
+    a.append(request.form(['gender']))
     a.append(request.form(['spouse']))
     a.append(request.form(['dependent']))
     a.append(request.form(['education']))
