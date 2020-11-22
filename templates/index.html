@@ -30,14 +30,13 @@
     </div>
 </div>
 
+<h1>{{ data }}</h1>
 
-
-
-{%if data == 'Y'%}
-<h1>JOHNNY APPROVES</h1>
-{%elif data==0%}
-
-{%endif%}
+<ul>
+{%for i in range(0, len)%}
+    <li>{{reasons[i]}}</li>
+{%endfor%}
+</ul>
 
 <style>
 
