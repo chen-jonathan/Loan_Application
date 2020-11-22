@@ -24,16 +24,17 @@ if __name__ == "__main__":
 @app.route('/submit', methods=['GET', 'POST'])
 def run():
     a = []
-    for i in range(5):
-        a.append(request.form["attribute" + str(i)])
     a.append(request.form(['gender']))
     a.append(request.form(['spouse']))
     a.append(request.form(['dependent']))
     a.append(request.form(['education']))
     a.append(request.form(['employed']))
+    for i in range(5):
+        a.append(request.form["attribute" + str(i)])
+
     a.append(request.form(['property']))
     print(a)
-    pred = clf_model.predict([a])
+    pred = clf_model.predict(a)
     return render_template("index.html", data=pred)
 
 def getFactors(a):
