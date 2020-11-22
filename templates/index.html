@@ -20,7 +20,7 @@
         <p>Applicant Income <input name = "attribute0" /></p>
         <p>Coapplicant Income <input name = "attribute1" /></p>
         <p>Loan Amount <input name = "attribute2" /></p>
-        <p>Loan Amount Item <input  name = "attribute3" /></p>
+        <p>Loan Amount Term <input  name = "attribute3" /></p>
         <p>Credit History <input  name = "attribute4" /></p>
         <label for="gender"> Select your Gender:</label>
         <select name="gender" id="gender" required>
@@ -68,13 +68,14 @@
     </div>
 </div>
 
-<h1>{{ data }}</h1>
 
-<ul>
-{%for i in range(0, len)%}
-    <li>{{reasons[i]}}</li>
-{%endfor%}
-</ul>
+
+
+{%if data == 1%}
+<h1>JOHNNY</h1>
+{%elif data==0%}
+
+{%endif%}
 
 <style>
 
