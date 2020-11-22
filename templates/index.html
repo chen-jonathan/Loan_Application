@@ -61,21 +61,20 @@
             <option value="2">SemiUrban</option>
             <option value="3">Urban</option>
         </select>
-        <p><input type = "Submit" value = "Submit" /></p>
+        <p><input type = "submit" value = "Submit" /></p>
     </form>
     <div class = "float-child">
         <p>Go to sleep</p>
     </div>
 </div>
 
+<h1>{{approved}}</h1>
 
-
-
-{%if data == 1%}
-<h1>JOHNNY</h1>
-{%elif data==0%}
-
-{%endif%}
+<ol>
+{%for i in range(0, len)%}
+    <li>{{reasons[i]}}</li>
+{%endfor%}
+</ol>
 
 <style>
 
