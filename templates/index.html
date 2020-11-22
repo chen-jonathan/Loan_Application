@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
@@ -16,15 +15,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 </nav>
-    <form action="/submit" method = "POST">
-        <p>Age (in days) <input type = "text" name = "attribute0" /></p>
-        <p>Annuity Amount <input type = "text" name = "attribute1" /></p>
-        <p>Days employed <input type = "text" name = "attribute2" /></p>
-        <p>Credit Amount <input type = "text" name = "attribute3" /></p>
-        <p>Income Total <input type = "text" name = "attribute4" /></p>
-        <p>Occupation Type <input type = "text" name = "attribute5" /></p>
+<div class = "float-container" >
+    <form action="/submit" method = "POST" class ="float-child">
+        <p>Age (in days) <input name = "attribute0" /></p>
+        <p>Annuity Amount <input name = "attribute1" /></p>
+        <p>Days employed <input name = "attribute2" /></p>
+        <p>Credit Amount <input  name = "attribute3" /></p>
+        <p>Income Total <input  name = "attribute4" /></p>
+        <p>Occupation Type <input name = "attribute5" /></p>
         <p><input type = "submit" value = "submit" /></p>
     </form>
+    <div class = "float-child">
+        <p>Go to sleep</p>
+    </div>
+</div>
 
 
 
