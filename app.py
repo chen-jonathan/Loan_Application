@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, flash, render_template, request
 import pickle
 import numpy as np
 
 app = Flask(__name__)
+app.secret_key = b'dasdasda\n\xec]/'
 clf_model = pickle.load(open('beta_model_3.pkl', 'rb'))
 
 
@@ -13,7 +14,7 @@ def home():
     reasons = []
     if pred == 'N':
         reasons = getFactors(a)
-    return render_template("index.html", approved=getApproved(pred), reasons=reasons, len=len(reasons))
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
@@ -30,11 +31,20 @@ def run():
         a.append(request.form["attribute" + str(i)])
     a.append(request.form['credit'])
     a.append(request.form['property'])
+    checkEmpty([a])
+
     reasons = []
     pred = clf_model.predict([a])
     if pred == 'N':
         reasons = getFactors([a])
     return render_template("index.html", approved=getApproved(pred), reasons=reasons, len=len(reasons))
+
+def checkEmpty(a):
+    a = a[0]
+    if any(x == '' for x in a):
+        flash('Looks like you have not fully filled out the form!')
+        return False
+    return True
 
 def getApproved(pred):
     if (pred == 'Y'): return "Approved!"
@@ -42,7 +52,6 @@ def getApproved(pred):
 
 def getFactors(a):
     a = a[0]
-    print(a[10])
     factors = []
     if a[9] == '0': # Bad Credit History
         factors.append("Your Credit History is insufficient. Try getting more credit experience before applying again.")
