@@ -26,15 +26,16 @@ def run():
     a.append(request.form['dependent'])
     a.append(request.form['education'])
     a.append(request.form['employed'])
-    for i in range(5):
+    for i in range(4):
         a.append(request.form["attribute" + str(i)])
+    a.append(request.form['credit'])
     a.append(request.form['property'])
-
     reasons = []
     pred = clf_model.predict([a])
     if pred == 'N':
         reasons = getFactors([a])
     return render_template("index.html", approved=pred, reasons=reasons, len=len(reasons))
+
 
 def getFactors(a):
     a = a[0]
@@ -46,3 +47,4 @@ def getFactors(a):
     if int(a[7]) > 180: # High Loan
         factors.append("The borrowing amount you asked for is a little high. Please try a lower amount.")
     return factors
+
